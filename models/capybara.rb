@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Capybara
 
-  attr_reader( :name, :admission, :age, :available )
+  attr_reader( :name, :admission, :age, :available, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']

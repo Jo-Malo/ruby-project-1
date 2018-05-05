@@ -9,7 +9,7 @@ CREATE TABLE capybaras
   admission DATE,
   age INT2,
   available BIT
-)
+);
 --
 -- CREATE TABLE owners
 -- (

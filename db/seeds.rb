@@ -3,6 +3,7 @@ require_relative( "../models/capybara.rb" )
 # require_relative( "../models/adoption.rb" )
 require("pry")
 
+Capybara.delete_all()
 
 capybara1 = Capybara.new({
   "name" => "Julian",
