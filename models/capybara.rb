@@ -30,4 +30,23 @@ class Capybara
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM capybaras"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Capybara.new( hash ) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM capybaras
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Capybara.new( results.first )
+  end
+
+  def self.delete_all
+  sql = "DELETE FROM capybaras"
+  SqlRunner.run( sql )
+  end
+
 end
