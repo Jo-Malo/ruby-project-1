@@ -1,0 +1,15 @@
+<form action="/owner/new" method="post">
+
+  <label for="name">Full Name:</label>
+  <input type="text" name="name" id="name" required>
+
+
+  <label for="capybara-name">Capybara Name:</label>
+  <select id="capybara-name" name= "capybara_id">
+    <% @capybaras.each { |capybara| %>
+      <option value="<%= capybara.id %>"><%= capybara.name %></option>
+      <% } %>
+    </select>
+    <input type="submit" value="Click to save">
+
+  </form>

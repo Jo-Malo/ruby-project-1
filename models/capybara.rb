@@ -2,7 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Capybara
 
-  attr_reader( :name, :admission, :age, :available, :id )
+  attr_reader( :admission, :age, :available, :id )
+  attr_accessor( :name )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -30,6 +31,24 @@ class Capybara
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE capybaras SET (
+    name,
+    admission,
+    age,
+    available
+    ) = ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @admission, @age, @available]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+  sql = "DELETE from capybaras WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM capybaras"
     results = SqlRunner.run( sql )
@@ -45,8 +64,8 @@ class Capybara
   end
 
   def self.delete_all
-  sql = "DELETE FROM capybaras"
-  SqlRunner.run( sql )
+    sql = "DELETE FROM capybaras"
+    SqlRunner.run( sql )
   end
 
 end

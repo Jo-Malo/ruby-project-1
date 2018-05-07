@@ -1,6 +1,6 @@
--- DROP TABLE adoptions;
+DROP TABLE adoptions;
 DROP TABLE capybaras;
--- DROP TABLE owners;
+DROP TABLE owners;
 --
 CREATE TABLE capybaras
 (
@@ -10,11 +10,16 @@ CREATE TABLE capybaras
   age INT2,
   available BIT
 );
---
--- CREATE TABLE owners
--- (
--- );
---
--- CREATE TABLE adoptions
--- (
--- );
+
+CREATE TABLE owners
+(
+  id SERIAL8 primary key,
+  name VARCHAR(255) not null
+);
+
+CREATE TABLE adoptions
+(
+  id SERIAL8 primary key,
+  owner_id INT8 references owners(id),
+  capybara_id INT8 references capybaras(id)
+);

@@ -1,0 +1,20 @@
+<h1>Adoptions</h1>
+
+<a class="btn btn--action" href="/adoptions/new">Add an adoption</a>
+
+
+  <h3>Adoptions made</h3>
+</p>
+
+<ul>
+  <% for adoption in @adoptions %>
+  <li>
+  <p>Capybara <%= adoption.capybara.name %> was adopted by <%= adoption.owner.name %> </p>
+    <p>
+      <form action="/adoptions/<%= adoption.id %>/delete" method="POST">
+        <input class="btn btn-primary" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>
