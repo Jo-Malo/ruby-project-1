@@ -1,0 +1,30 @@
+<h2>Edit <%= @capybara.name %></h2>
+<form method="POST" action="/capybaras/<%= @capybara.id %>">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @capybara.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="admission">Admission:</label>
+      <input type="text" name="admission" id="admission" value="<%= @capybara.admission%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="admission">Age:</label>
+      <input type="text" name="age" id="age" value="<%= @capybara.age%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="available">Available:</label>
+      <input type="text" name="available" id="available" value="<%= @capybara.available%>"/>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="submit"/>
+    </div>
+
+  </div>
+</form>

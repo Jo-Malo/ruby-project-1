@@ -2,8 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Capybara
 
-  attr_reader( :admission, :age, :available, :id )
-  attr_accessor( :name )
+  attr_reader( :admission, :age, :id )
+  attr_accessor( :name, :available )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -39,7 +39,7 @@ class Capybara
     available
     ) = ($1, $2, $3, $4)
     WHERE id = $5"
-    values = [@name, @admission, @age, @available]
+    values = [@name, @admission, @age, @available, @id]
     SqlRunner.run(sql, values)
   end
 
