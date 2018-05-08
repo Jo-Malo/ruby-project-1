@@ -7,7 +7,6 @@ require_relative('../models/capybara.rb')
 
 
 get '/adoptions' do
-  # puts "Hello world!"
   @adoptions = Adoption.all()
   erb (:"adoptions/index")
 end

@@ -10,7 +10,7 @@ class Capybara
     @name = options['name']
     @admission = options['admission']
     @age = options['age']
-    @available = options['available']
+    @available = options['available'].to_i
   end
 
   def save()
@@ -47,6 +47,14 @@ class Capybara
   sql = "DELETE from capybaras WHERE id = $1"
   values = [@id]
   SqlRunner.run(sql, values)
+  end
+
+  def is_available()
+    if available == 1
+      return "yes"
+    else
+      return "no"
+    end
   end
 
   def self.all()
