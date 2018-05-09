@@ -23,3 +23,13 @@ post '/capybaras/:id' do
   capybara.update
   redirect to "/capybaras/#{params['id']}"
 end
+
+get '/capybara/homeless' do
+  @capybaras = Capybara.available()
+  erb (:"capybaras/avail_show")
+end
+
+get '/capybara/rehomed' do
+  @capybaras = Capybara.unavailable()
+  erb (:"capybaras/unavail_show")
+end

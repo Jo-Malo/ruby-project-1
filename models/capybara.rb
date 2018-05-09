@@ -57,6 +57,20 @@ class Capybara
     end
   end
 
+  def self.available()
+    sql = "SELECT * FROM capybaras
+    WHERE available = '1'"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Capybara.new( hash) }
+  end
+
+  def self.unavailable()
+    sql = "SELECT * FROM capybaras
+    WHERE available = '0'"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Capybara.new( hash) }
+  end
+
   def self.all()
     sql = "SELECT * FROM capybaras"
     results = SqlRunner.run( sql )
