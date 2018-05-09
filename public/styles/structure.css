@@ -4,8 +4,6 @@
   background-position: top-center;
   height: 700px;
   width: 100%;
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-direction: column;
 }
 
@@ -30,8 +28,10 @@ body {
   justify-content: space_around;
   background-size: 50%;
   background-repeat: no-repeat;
-  padding: 0px;
-  margin: 0px;
+  padding-top:0px;
+  padding-right:0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -65,7 +65,20 @@ body {
   justify-content: space-around;
 }
 
-header-container {
+.profile-container {
+
+}
+
+.profile {
+
+}
+
+.img {
+    border-radius: 50%;
+}
+
+/*NOT CURRENTLY BEING USED
+/* header-container {
   color: #d8e9ef;
   background-color: #d8e9ef;
   display: flex;
@@ -78,4 +91,4 @@ header-container {
   display: flex;
   justify-content: center;
   align-items: stretch;
-}
+} */
