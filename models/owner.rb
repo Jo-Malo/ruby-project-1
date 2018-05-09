@@ -24,6 +24,18 @@ class Owner
     @id = results.first()['id'].to_i
   end
 
+  def capybaras()
+    sql = "SELECT capybaras.*
+    FROM capybaras
+    INNER JOIN adoptions
+    ON adoptions.capybara_id = capybaras.id
+    WHERE adoptions.owner_id = $1"
+    values = [@id]
+    capybara_data = SqlRunner.run(sql, values)
+    capybaras = Capybara.map_items(capybara_data)
+    return capybaras
+  end
+
   def self.all()
     sql = "SELECT * FROM owners"
     results = SqlRunner.run( sql )

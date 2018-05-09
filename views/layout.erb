@@ -7,10 +7,12 @@
 
   <link rel="stylesheet" type="text/css" href="/styles/structure.css">
   <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
 
   <title>Capybaracks</title>
 
 </head>
+
 <body>
   <main>
     <div class='nav-container'>
@@ -20,22 +22,16 @@
 
         <div class='animals'><a href="/capybaras">All Capybaras</a></div>
 
-        <div class='date'><a href="/owners">All Owners</a></div>
+        <div class='owners'><a href="/owners">All Owners</a></div>
 
-        <!-- <div class='date'><a href="/owner/new">Add an owner</a></div> -->
-
-        <div class='date'><a href="/adoptions">All Adoptions</a></div>
+        <div class='adoptions'><a href="/adoptions">All Adoptions</a></div>
 
       </div>
     </div>
 
-    <div class='header-container'>
-  <div class='header'>
 
       <%= yield %>
 
-  </div>
-    </div>
 
     </main>
   </body>

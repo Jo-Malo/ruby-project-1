@@ -51,10 +51,14 @@ class Capybara
 
   def is_available()
     if available == 1
-      return "yes"
+      return "Yes"
     else
-      return "no"
+      return "No"
     end
+  end
+
+  def get_adopted()
+    @available = 0
   end
 
   def self.available()
@@ -88,6 +92,11 @@ class Capybara
   def self.delete_all
     sql = "DELETE FROM capybaras"
     SqlRunner.run( sql )
+  end
+
+  def self.map_items(capybara_hashes)
+    result = capybara_hashes.map {|capybara_hash| Capybara.new(capybara_hash)}
+    return result
   end
 
 end

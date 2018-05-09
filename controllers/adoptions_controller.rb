@@ -11,7 +11,6 @@ get '/adoptions' do
   erb (:"adoptions/index")
 end
 
-
 get '/adoptions/new' do
   @owners = Owner.all
   @capybaras = Capybara.all
@@ -21,6 +20,9 @@ end
 post '/adoptions' do
   adoption = Adoption.new(params)
   adoption.save
+  capybara = Capybara.find(adoption.capybara_id)
+  capybara.get_adopted
+  capybara.update
   redirect to("/adoptions")
 end
 

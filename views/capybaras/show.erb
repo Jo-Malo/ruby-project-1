@@ -1,7 +1,13 @@
-<h1>Capybara <%= @capybara.name %></h1>
+<div class='profile-container'>
+  <div class='profile'>
 
-<p>Admission: <%= @capybara.admission %></p>
+  <h1>Capybara <%= @capybara.name %></h1>
 
-<p>Available? <%= @capybara.is_available %></p>
+  <p>Admission: <%= @capybara.admission %></p>
 
-<a href="/capybaras/<%= @capybara.id %>/edit">Edit</a>
+  <p>Available: <%= @capybara.is_available %></p>
+
+  <a href="/capybaras/<%= @capybara.id %>/edit">Edit</a>
+
+  </div>
+</div>
