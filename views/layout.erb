@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
   <link rel="icon" href="/images/capy_head_logo.png" />
 
   <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+
   <title>Capybaracks</title>
 
 </head>
 <body>
   <main>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/capybaras">All Capybaras</a>
-        </li>
-        <li>
-          <a href="/owners">All Owners</a>
-        </li>
-        <li>
-          <a href="/owner/new">Add an owner</a>
-        </li>
-        <li>
-          <a href="/adoptions">Add an adoption</a>
-        </li>
-        </ul>
-      </nav>
+    <div class='nav-container'>
+      <div class='nav'>
+
+        <div class='home'><a href="/">Home</a></div>
+
+        <div class='animals'><a href="/capybaras">All Capybaras</a></div>
+
+        <div class='date'><a href="/owners">All Owners</a></div>
+
+        <div class='date'><a href="/owner/new">Add an owner</a></div>
+
+        <div class='date'><a href="/adoptions">Add an adoption</a></div>
+
+      </div>
+    </div>
+
+    <div class='header-container'>
+  <div class='header'>
 
       <%= yield %>
+
+  </div>
+    </div>
 
     </main>
   </body>

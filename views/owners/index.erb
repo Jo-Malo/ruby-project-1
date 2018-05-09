@@ -1,5 +1,7 @@
+<h1>Owners</h1>
+
 <a class="btn btn--action" href="/owner/new">Add an owner</a>
-<br><br>
+  <br><br>
 <table frame="box">
   <tr>
     <th>Owner ID</th>
@@ -10,7 +12,6 @@
   <% for owner in @owners %>
   <tr>
     <td><%= owner.id %></td><td><%= owner.name %></td>
-    <!-- <td><a class="btn btn--action" href="/owner/:id/adopt">Adopt capybara</a></td> -->
   </tr>
   <% end %>
 
