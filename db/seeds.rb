@@ -47,6 +47,22 @@ capybara5 = Capybara.new({
   })
 capybara5.save()
 
+capybara6 = Capybara.new({
+  "name" => "Julio",
+  "admission" => "2016-01-05",
+  "age" => 9,
+  "available" => 1
+  })
+capybara6.save()
+
+capybara7 = Capybara.new({
+  "name" => "Suca",
+  "admission" => "2016-09-27",
+  "age" => 2,
+  "available" => 1
+  })
+capybara7.save()
+
 owner1 = Owner.new({
   "name" => "Harry Marshall"
   })
