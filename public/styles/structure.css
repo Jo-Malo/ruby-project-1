@@ -66,16 +66,8 @@ body {
   justify-content: space-around;
 }
 
-.profile-container {
-
-}
-
-.profile {
-
-}
-
-.img {
-    border-radius: 50%;
+img {
+    border-radius: 60%;
 }
 
 /*NOT CURRENTLY BEING USED
