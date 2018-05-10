@@ -26,12 +26,12 @@ end
 
 get '/capybara/homeless' do
   @capybaras = Capybara.available()
-  erb (:"capybaras/avail_show")
+  erb (:"capybaras/homeless_show")
 end
 
 get '/capybara/rehomed' do
   @capybaras = Capybara.unavailable()
-  erb (:"capybaras/unavail_show")
+  erb (:"capybaras/rehomed_show")
 end
 
 get '/capybara/new' do
