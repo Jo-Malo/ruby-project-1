@@ -33,3 +33,20 @@ get '/capybara/rehomed' do
   @capybaras = Capybara.unavailable()
   erb (:"capybaras/unavail_show")
 end
+
+get '/capybara/new' do
+  @capybaras = Capybara.all()
+  erb( :"capybaras/new" )
+end
+
+post '/capybara/new' do
+  new_capybara = Capybara.new(params)
+  new_capybara.save()
+  redirect to('/capybaras')
+end
+# just added
+post '/capybaras/:id/delete' do
+  capybara = Capybara.find(params['id'])
+  capybara.delete
+  redirect to("/capybaras")
+end

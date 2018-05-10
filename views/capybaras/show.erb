@@ -8,8 +8,9 @@
   <p>Available: <%= @capybara.is_available %></p>
 
   <a href="/capybaras/<%= @capybara.id %>/edit">Edit</a>
+  <form action="/capybaras/<%= @capybara.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
 
   </div>
 </div>
 
-  <img src="https://static.boredpanda.com/blog/wp-content/uploads/2016/04/capybara-unusual-animal-friendship-35-5703a5979041b__605.jpg" alt="Avatar">
+<img src="https://static.boredpanda.com/blog/wp-content/uploads/2016/04/capybara-unusual-animal-friendship-35-5703a5979041b__605.jpg" alt="Avatar">
