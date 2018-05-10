@@ -3,4 +3,10 @@ table {
     border-collapse: separate;
     border-spacing: 2px;
     border-color: gray;
+    margin: 5;
+    width: 60%;
+}
+
+td, th {
+  text-align: left;
 }
