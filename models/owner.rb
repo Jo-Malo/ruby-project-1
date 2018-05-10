@@ -24,6 +24,12 @@ class Owner
     @id = results.first()['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE from owners WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def capybaras()
     sql = "SELECT capybaras.*
     FROM capybaras
